@@ -30,8 +30,8 @@ CC := g++
 ASM := yasm
 LD := $(CC)
 
-LIBS := -L/boot/common/lib -lroot -lbe -ltranslation -ltracker -ldjvulibre -ljpeg
-CFLAGS := -O3 -I./Includes -I/boot/common/include
+LIBS := -lroot -lbe -ltranslation -ltracker -ljpeg -L./djvulibre/libdjvu/.libs -ldjvulibre
+CFLAGS := -O3 -I./Includes -I./djvulibre
 LDFLAGS := 
 
 .PHONY : clean Build

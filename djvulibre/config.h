@@ -8,22 +8,22 @@
 
 
 /* directory "bindir" */
-#define DIR_BINDIR "/boot/common/bin"
+#define DIR_BINDIR "/usr/local/bin"
 
 /* directory "datadir" */
-#define DIR_DATADIR "/boot/common/share"
+#define DIR_DATADIR "/usr/local/share"
 
 /* directory "exec_prefix" */
-#define DIR_EXEC_PREFIX "/boot/common"
+#define DIR_EXEC_PREFIX "/usr/local"
 
 /* directory "libdir" */
-#define DIR_LIBDIR "/boot/common/lib"
+#define DIR_LIBDIR "/usr/local/lib"
 
 /* directory "mandir" */
-#define DIR_MANDIR "/boot/common/share/man"
+#define DIR_MANDIR "/usr/local/share/man"
 
 /* directory "prefix" */
-#define DIR_PREFIX "/boot/common"
+#define DIR_PREFIX "/usr/local"
 
 /* version string */
 #define DJVULIBRE_VERSION "3.5.25"
@@ -72,7 +72,7 @@
 #define HAVE_ICONV_H 1
 
 /* define if the compiler supports intel atomic builtins */
-/* #undef HAVE_INTEL_ATOMIC_BUILTINS */
+#define HAVE_INTEL_ATOMIC_BUILTINS 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1

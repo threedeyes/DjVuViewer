@@ -18,7 +18,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = config/ltmain.sh
 
 srcdir = .
-prefix = /boot/common
+prefix = /usr/local
 exec_prefix = ${prefix}
 bindir = ${exec_prefix}/bin
 datarootdir = ${prefix}/share

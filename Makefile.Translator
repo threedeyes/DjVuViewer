@@ -13,8 +13,8 @@ OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
 CC := g++
 LD := $(CC)
 
-LIBS := -L/boot/common/lib -lroot -lbe -ltranslation -ldjvulibre -ljpeg
-CFLAGS := -O3 -I./Includes -I/boot/common/include
+LIBS := -lroot -lbe -ltranslation -ltracker -ljpeg -L./djvulibre/libdjvu/.libs -ldjvulibre
+CFLAGS := -O3 -I./Includes -I./djvulibre
 LDFLAGS := 
 
 .PHONY : clean Build

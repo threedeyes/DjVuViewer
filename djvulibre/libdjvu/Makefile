@@ -20,7 +20,7 @@ srcdir = .
 top_srcdir = ..
 top_builddir = ..
 
-prefix = /boot/common
+prefix = /usr/local
 exec_prefix = ${prefix}
 bindir = ${exec_prefix}/bin
 datarootdir = ${prefix}/share
@@ -41,7 +41,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 
 DEFS = -DHAVE_CONFIG_H
-OPTS = -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor -mcpu=i586
+OPTS = -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor -mtune=i586
 CXXRPOFLAGS = 
 JPEG_LIBS=-ljpeg
 JPEG_CFLAGS=
