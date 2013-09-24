@@ -1,0 +1,37 @@
+
+BINARY := DjVuTranslator
+
+OBJS := LoadDjVu.o \
+		DjVuTranslator.o
+
+OBJDIR := Build
+
+RSRCS := Resource/resource.rsrc
+
+OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
+
+CC := g++
+LD := $(CC)
+
+LIBS := -L/boot/common/lib -lroot -lbe -ltranslation -ldjvulibre -ljpeg
+CFLAGS := -O3 -I./Includes -I/boot/common/include
+LDFLAGS := 
+
+.PHONY : clean Build
+
+default : Build
+
+Build : $(BINARY)
+	
+$(BINARY) : $(OBJDIR) $(OBJS) $(RSRCS)
+	$(LD) $(CFLAGS) $(OBJS) -o $(BINARY) $(LDFLAGS) $(LIBS)
+	xres -o $(BINARY) $(RSRCS)  Themes/Default
+	mimeset -f $(BINARY)
+
+clean:
+	rm -rf $(OBJDIR)/*.*
+	rm $(BINARY)
+
+Build/%.o : Src/%.cpp
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
