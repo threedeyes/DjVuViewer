@@ -190,7 +190,7 @@ status_t Identify(BPositionIO *inSource, const translation_format *inFormat, BMe
 		message = ddjvu_message_wait(context);
 
 		if (message->m_any.tag != DDJVU_NEWSTREAM)
-                return NULL;    /* error! */
+                return B_ERROR;    /* error! */
         else  {
                 int streamid = message->m_newstream.streamid;
                 char buffer[512];
@@ -280,7 +280,7 @@ status_t NativeBitmapToTranslatorBitmap(BPositionIO *in, BPositionIO *out, BMess
 
 	if (message->m_any.tag != DDJVU_NEWSTREAM)
                 /* ddjvu_message_pop(context); */
-                return NULL;    /* error! */
+                return B_ERROR;    /* error! */
         else  {
                 int streamid = message->m_newstream.streamid;
                 char buffer[512];
@@ -303,11 +303,11 @@ status_t NativeBitmapToTranslatorBitmap(BPositionIO *in, BPositionIO *out, BMess
                 printf("Pages: %d\n",pages);
 
                 if (pages < 1) /* != */
-                        return NULL;    /* error (unexpected) */
+                        return B_ERROR;    /* error (unexpected) */
                 break; 
         }
         default:
-                return NULL;    /* error (unexpected) */
+                return B_ERROR;    /* error (unexpected) */
                 
         };
         ddjvu_message_pop(context);
