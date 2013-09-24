@@ -30,9 +30,9 @@ CC := g++
 ASM := yasm
 LD := $(CC)
 
-LIBS := -L/boot/common/lib -lroot -lbe -ltranslation -ltracker -ljpeg
+LIBS := -L/boot/common/lib -lroot -lbe -ltranslation -ltracker -ldjvulibre -ljpeg
 CFLAGS := -O3 -I./Includes -I/boot/common/include
-LDFLAGS := /boot/common/lib/libdjvulibre.a
+LDFLAGS := 
 
 .PHONY : clean Build
 
@@ -41,7 +41,7 @@ default : Build
 Build : $(BINARY)
 	
 $(BINARY) : $(OBJDIR) $(OBJS) $(RSRCS)
-	$(LD) $(CFLAGS) $(LIBS) $(OBJS) -o $(BINARY) $(LDFLAGS)
+	$(LD) $(CFLAGS) $(OBJS) -o $(BINARY) $(LDFLAGS) $(LIBS)
 	xres -o $(BINARY) $(RSRCS)  Themes/Default
 	mimeset -f $(BINARY)
 
