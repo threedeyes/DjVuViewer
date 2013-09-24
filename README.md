@@ -3,6 +3,8 @@ DjVuViewer
 
 DjVu Viewer for Haiku-OS
 
+Based on djvulibre library - http://djvu.sourceforge.net/
+
 Build
 -----
 
@@ -35,6 +37,7 @@ Installing DjVuViewer application:
     
 Installing translator:
 
-    Copy DjVuTranslator into /boot/home/config/add-ons/Translators or /boot/common/add-ons/Translators directory
-    
+    cp ./DjVuTranslator /boot/home/config/add-ons/Translators
+        or...
+    cp ./DjVuTranslator /boot/common/add-ons/Translators
     
