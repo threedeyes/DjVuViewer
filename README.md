@@ -1,7 +1,7 @@
 DjVuViewer
 ==========
 
-DjVu Viewer for Haiku-OS
+DjVu Viewer and Translator for Haiku-OS
 
 Based on djvulibre library - http://djvu.sourceforge.net/
 
