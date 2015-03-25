@@ -1,43 +1,38 @@
 DjVuViewer
 ==========
 
-DjVu Viewer and Translator for Haiku-OS
+DjVu Viewer and Translator for Haiku
 
-Based on djvulibre library - http://djvu.sourceforge.net/
+Based on djvulibre library - http://djvu.sourceforge.net
 
-Build
------
+Building
+--------
 
 Cloning repo:
 
-    $ git clone https://github.com/threedeyes/DjVuViewer
+	$ git clone https://github.com/threedeyes/DjVuViewer
 
+Installing dependencies:
 
-Building djvulibre:
-
-    $ cd djvulibre
-    $ ./configure
-    $ make
-    $ cd ..
+	$ pkgman install jpeg_devel djvulibre_devel
 
 Building standalone DjVuViewer:
 
-    $ make
-    
+	$ make
+
 Building system translator:
 
-    $ make -f Makefile.Translator
-    
+	$ make -f Makefile.Translator
+
 Installing
 ----------
 
 Installing DjVuViewer application:
 
-    Copy DjVuViewer binary and Languages and Themes into your application folder
-    
+	Copy DjVuViewer binary, Languages and Themes folders into your application folder
+
 Installing translator:
 
-    cp ./DjVuTranslator /boot/home/config/add-ons/Translators
-        or...
-    cp ./DjVuTranslator /boot/common/add-ons/Translators
-    
+	cp DjVuTranslator /boot/system/non-packaged/add-ons/Translators
+		or...
+	cp DjVuTranslator /boot/home/config/non-packaged/add-ons/Translators
