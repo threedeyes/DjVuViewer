@@ -164,7 +164,8 @@ status_t Identify(BPositionIO *inSource, const translation_format *inFormat, BMe
 	status_t err = inSource->Read(header, sizeof(TranslatorBitmap));
 	if (err < B_OK) return err;
 	
-	if ( strncmp( ((DjVuHeader*)header)->id,"AT&TFORM",8)==0 && strncmp(((DjVuHeader*)header)->id2,"DJVM",4)==0 ) {
+//	if ( strncmp( ((DjVuHeader*)header)->id,"AT&TFORM",8)==0 && strncmp(((DjVuHeader*)header)->id2,"DJVM",4)==0 ) {
+	if ( strncmp( ((DjVuHeader*)header)->id,"AT&TFORM",8)==0 ) {
 		outInfo->type = inputFormats[0].type;
 		outInfo->translator = 0;
 		outInfo->group = inputFormats[0].group;
