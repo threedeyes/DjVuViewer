@@ -14,7 +14,7 @@ Cloning repo:
 
 Installing dependencies:
 
-	$ pkgman install jpeg_devel djvulibre_devel
+	$ pkgman install djvulibre_devel
 
 Building standalone DjVuViewer:
 
