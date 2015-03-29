@@ -22,9 +22,9 @@ DjVuApp::DjVuApp(int argc, char **argv) : BApplication("application/x-vnd.DjVuVi
 	//fOpenPanel->Window()->SetTitle("Open file...");
 	if(SETTINGS->Load(SETTINGSFILE)==false)
 		{
-		SETTINGS->SetColor("CursBarCol",0,74,245);
+		SETTINGS->SetColor("CursBarCol",153,153,153);
 		SETTINGS->SetColor("CursFrameCol",34,34,34);
-		SETTINGS->SetColor("CursTextCol",255,255,255);
+		SETTINGS->SetColor("CursTextCol",0,0,0);
 		SETTINGS->SetColor("EvenLinesCol",215,215,215);
 		SETTINGS->SetColor("EvenTextCol",0,0,0);
 		SETTINGS->SetColor("OddLinesCol",236,236,236);
