@@ -6,7 +6,7 @@ OBJS := LoadDjVu.o \
 
 OBJDIR := Build
 
-RSRCS := Resource/resource.rsrc
+RSRCS := Resource/translator_resource.rsrc
 
 OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
 
@@ -25,7 +25,7 @@ Build : $(BINARY)
 	
 $(BINARY) : $(OBJDIR) $(OBJS) $(RSRCS)
 	$(LD) $(CFLAGS) $(OBJS) -o $(BINARY) $(LDFLAGS) $(LIBS)
-	xres -o $(BINARY) $(RSRCS)  Themes/Default
+	xres -o $(BINARY) $(RSRCS)
 	mimeset -f $(BINARY)
 
 clean:

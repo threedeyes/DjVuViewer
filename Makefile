@@ -42,7 +42,7 @@ Build : $(BINARY)
 	
 $(BINARY) : $(OBJDIR) $(OBJS) $(RSRCS)
 	$(LD) $(CFLAGS) $(OBJS) -o $(BINARY) $(LDFLAGS) $(LIBS)
-	xres -o $(BINARY) $(RSRCS)  Themes/Default
+	xres -o $(BINARY) $(RSRCS)
 	mimeset -f $(BINARY)
 
 clean:

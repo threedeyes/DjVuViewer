@@ -83,7 +83,7 @@ DjVuWindow::DjVuWindow(const char *title)
 	BDirectory *dir=THEME->GetDirectory();
 	BEntry ent;
 	char filename[B_FILE_NAME_LENGTH];
-	ThemePopUp->AddItem(new BMenuItem("Default", new BMessage(kThemeChanged)));		
+	//ThemePopUp->AddItem(new BMenuItem("Default", new BMessage(kThemeChanged)));		
 	dir->Rewind();
 	
 	while (dir->GetNextEntry(&ent) == B_NO_ERROR)
