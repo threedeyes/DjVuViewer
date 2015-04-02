@@ -3,6 +3,7 @@
 #include <StringView.h>
 #include <TranslatorAddOn.h>
 #include <TranslationKit.h>
+#include <String.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -234,8 +235,11 @@ status_t Identify(BPositionIO *inSource, const translation_format *inFormat, BMe
         	if(ioExtension->FindInt32("/documentIndex", &pageIndex) != B_OK)
         		pageIndex = 1;
 		}
-                		
-		sprintf(outInfo->name, "%s #%d", inputFormats[0].name, pageIndex);
+
+		BString docName(inputFormats[0].name);
+		docName << " " << pageIndex << "/" << pages;
+
+		snprintf(outInfo->name, sizeof(outInfo->name), docName.String());
  			    		
 		return B_OK;
 	}
