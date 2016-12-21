@@ -19,12 +19,6 @@
 const uint32 MSG_OUTPUT_TYPE		= 'BTMN';
 const uint32 MSG_SAVE_PANEL			= 'mFSP';
 
-inline int isdigit(char c)
-{
- if(c<='9' && c>='0')return 0;
- return -1;
-}
-
 
 class DjVuWindow : public BWindow
 {
