@@ -132,7 +132,7 @@ TranslatorView::TranslatorView(BRect rect, const char *name) :
 	r.bottom = r.top + fh.ascent + fh.descent;
 	r.right = r.left + Bounds().right;
 	
-	BStringView *libre = new BStringView(r, "BasedOn", "Based on djvulibre 3.5.25 library");
+	BStringView *libre = new BStringView(r, "BasedOn", "Based on djvulibre library");
 	libre->SetFont(be_plain_font);
 	AddChild(libre);
 }

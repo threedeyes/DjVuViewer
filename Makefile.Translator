@@ -14,7 +14,7 @@ CC := g++
 LD := $(CC)
 
 LIBS :=  -lbe -ltranslation -ltracker -ldjvulibre
-CFLAGS := -O3 -I./Includes
+CFLAGS := -O0 -I./Includes
 LDFLAGS := 
 
 .PHONY : clean Build
