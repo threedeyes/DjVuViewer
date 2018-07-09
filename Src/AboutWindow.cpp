@@ -122,9 +122,14 @@ IterView::MyDraw(void)
  	 int SkyH=(int)(SkyBitmap->Bounds().Height())+1;
   	 int SkrWHalf=(int)((buffer->Bounds().Width())+1)/2;
  	 int SkrW=(int)(buffer->Bounds().Width());
- 	 	 
+#ifdef __x86_64
+	 bufferView->SetDrawingMode(B_OP_COPY);
+	 bufferView->SetHighColor(102, 152, 203);
+	 bufferView->SetLowColor(102, 152, 203);
+	 bufferView->FillRect(Bounds());
+#else
  	 ::AsmRender(ScrBuff,SkyBuff,D,H,k,xshift,yshift,H2,k2,xshift2,yshift2,Hor,SkyW,SkyH,SkrW,SkrWHalf);
-	 
+#endif
  	 bufferView->SetDrawingMode(B_OP_ALPHA);
 	 bufferView->DrawBitmap(MaskBitmap,BPoint(0,0));
 	 

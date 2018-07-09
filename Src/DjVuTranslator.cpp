@@ -30,7 +30,7 @@ sem_id render_sem;
 // Translation Kit required globals
 char translatorName[32];
 char translatorInfo[100];
-int32 translatorVersion = 0x101;
+int32 translatorVersion = 0x122;
 
 // A couple other useful variables
 char native_translator_file_name[32];

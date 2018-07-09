@@ -17,12 +17,15 @@ OBJS := MainApp.o \
 		Filter.o \
 		LoadDjVu.o \
 		ThumbListItem.o \
-		GoToWindow.o \
-		Render.o
+		GoToWindow.o		
 
 OBJDIR := Build
 
-RSRCS := Resource/resource.rsrc
+RDEF := Resource/resource.rdef
+
+ifneq ($(shell uname -m),x86_64)
+OBJS := $(OBJS) Render.o
+endif
 
 OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
 
@@ -39,10 +42,11 @@ LDFLAGS :=
 default : Build
 
 Build : $(BINARY)
-	
-$(BINARY) : $(OBJDIR) $(OBJS) $(RSRCS)
+
+$(BINARY) : $(OBJDIR) $(OBJS)
 	$(LD) $(CFLAGS) $(OBJS) -o $(BINARY) $(LDFLAGS) $(LIBS)
-	xres -o $(BINARY) $(RSRCS)
+	rc -o $(OBJDIR)/resource.rsrc $(RDEF)
+	xres -o $(BINARY) $(OBJDIR)/resource.rsrc
 	mimeset -f $(BINARY)
 
 clean:
